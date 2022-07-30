@@ -1,0 +1,23 @@
+<div *ngIf="usuario; then thenBlockUsuario else elseBlockUsuario"></div>
+<ng-template #thenBlockUsuario>
+    <div *ngIf="persona; then thenBlockPersona else elseBlockPersona"></div>
+    <ng-template #thenBlockPersona>
+
+        <app-encabezado-edit></app-encabezado-edit>
+        <app-inicio-edit-portfolio [persona]="persona"></app-inicio-edit-portfolio>
+        <app-acercade-edit [idPersona]="persona.id"></app-acercade-edit>
+        <app-experiencia-edit [idPersona]="persona.id"></app-experiencia-edit>
+        <app-educacion-edit></app-educacion-edit>
+        <app-sercicios-edit></app-sercicios-edit>
+        <app-proyectos-edit></app-proyectos-edit>
+        <app-contacto></app-contacto>
+        <app-pie-pagina></app-pie-pagina>
+
+    </ng-template>
+    <ng-template #elseBlockPersona>
+        Persona no encontrada
+    </ng-template>
+</ng-template>
+<ng-template #elseBlockUsuario>
+    No autorizado
+</ng-template>

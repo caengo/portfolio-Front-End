@@ -1,0 +1,50 @@
+<div class="section" id="acercade">
+    <div class="container">
+        <div class="container" *ngIf="acercade">
+            <div class="row mt-3">
+                <div class="col-md-12 mx-auto">
+                    <div class="card">
+                        <div class="card-header">
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item">
+                                    <a class=""><b>Actualizar Datos Acerca de Mí</b></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-body">
+                            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                                <div class="form-group">
+                                    <label for="acercade"><b>Acerca De</b></label>
+                                    <input type="text" class="form-control" id="nombre" name="nombre"
+                                        [(ngModel)]="acercade.acercade">
+                                </div>
+                                <div class="form-group">
+                                    <label for="fechanac"><b>Fecha de Nacimiento</b></label>
+                                    <input type="text" class="form-control" id="apellido" name="apellido"
+                                        [(ngModel)]="acercade.fechanac">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email"><b>Email</b></label>
+                                    <input type="text" class="form-control" id="profesion" name="profesion"
+                                        [(ngModel)]="acercade.email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="telefono"><b>Teléfono</b></label>
+                                    <input type="text" class="form-control" id="profesion" name="profesion"
+                                        [(ngModel)]="acercade.telefono">
+                                </div>
+                                <div class="form-group">
+                                    <label for="direccion"><b>Dirección</b></label>
+                                    <input type="text" class="form-control" id="resenia" name="resenia"
+                                        [(ngModel)]="acercade.direccion">
+                                </div>
+                                <button class="btn btn-block" [disabled]="!f.valid">Actualizar</button>
+                                <button class="btn btn-block" (click)="volver()"><i class=""></i> Volver</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

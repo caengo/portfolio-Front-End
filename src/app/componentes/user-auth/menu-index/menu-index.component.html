@@ -1,0 +1,11 @@
+<app-menu-portfolio></app-menu-portfolio>
+
+<div class="container">
+  <div class="jumbotron">
+    <div class="mb-4"></div>
+    <h1 *ngIf="usuario" class="display-4">Hola, {{usuario.nombre}}</h1>
+    <hr class="my-4">
+    <a class="btn btn-primary btn-lg" routerLink="/p/{{persona.id}}/edit" role="button">Editar Portfolio</a>
+    <a class="btn btn-primary btn-lg" routerLink="/p/{{persona.id}}" role="button">Ver Portfolio</a>
+  </div>
+</div>

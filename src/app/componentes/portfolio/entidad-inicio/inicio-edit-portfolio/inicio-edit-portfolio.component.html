@@ -1,0 +1,20 @@
+<div class="wrapper">
+    <div class="page-header page-header-small" style="height: 10vh;">
+    </div>
+</div>
+<div style="height: 10vh; background-color: rgba(44, 44, 44, 0.7)">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <a class="btn btn-default btn-round btn-lg btn-icon" routerLink="/p/{{persona.id}}/edit/persona"
+                    target="_self" rel="tooltip" title="editar">
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<app-inicio-portfolio [persona]="persona"></app-inicio-portfolio>

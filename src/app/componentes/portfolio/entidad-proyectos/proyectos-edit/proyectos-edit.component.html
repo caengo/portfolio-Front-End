@@ -1,0 +1,56 @@
+<div class="section" id="proyectos-edit">
+    <div class="container cc-education">
+        <div class="h4 text-center mb-4 title">Proyectos</div>
+        <div class="row">
+            <div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft"
+                *ngFor="let proyecto of proyectoArray" (click)="abrirParaEditar(proyecto)"
+                [class.active]="proyecto == selecProyecto">
+                <div class="blog-entry">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title"> <span class="badge badge-primary">{{proyecto.id}}</span> -
+                                {{proyecto.nombre}} <a class="btn btn-icon" routerLink="./" fragment="edit-proyecto"
+                                    rel="tooltip" style="float: right;" title="editar">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i></a></h4>
+                            <p>{{proyecto.resenia}}</p>
+                            <h5 class="card-text"><b>Tecnología :</b> "{{proyecto.tecnologia}}" </h5>
+                            <a href={{proyecto.referencia}} class="btn btn-primary stretched-link">LinkReferente</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section" id="edit-proyecto">
+            <div class="container">
+                <div class="card" data-aos="fade-up" data-aos-offset="10">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12">
+                            <div class="card-body">
+                                <div class="h4 mt-0 title">Ingresar Nombre - Descripción - Tecnología y Referencia</div>
+                                <div class="form-group">
+                                    <input type="tex" [(ngModel)]="selecProyecto.nombre"
+                                        placeholder="Insertar Nombre del Proyecto" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <input type="tex" [(ngModel)]="selecProyecto.resenia"
+                                        placeholder="Insertar Descripción" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <input type="tex" [(ngModel)]="selecProyecto.tecnologia"
+                                        placeholder="Insertar tecnologia del proyecto" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <input type="tex" [(ngModel)]="selecProyecto.referencia"
+                                        placeholder="Insertar Link de Referencia" class="form-control">
+                                </div>
+                                <button (click)="agregarOeditar()" class="btn btn-primary">Actualizar</button>
+                                <button *ngIf="selecProyecto.id !== 0" class="btn btn-danger"
+                                    (click)="eliminar()">Eliminar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

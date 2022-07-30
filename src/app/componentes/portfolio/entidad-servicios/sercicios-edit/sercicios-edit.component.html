@@ -1,0 +1,48 @@
+<div class="section" id="skill-edit">
+    <div class="container">
+        <div class="h4 text-center mb-4 title">Skills</div>
+        <div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6" *ngFor="let skill of servicioArray" (click)="abrirParaEditar(skill)"
+                        [class.active]="skill == selecServicio">
+                        <span class="badge badge-primary">{{skill.id}}</span> - {{skill.servicio}} <a
+                            class="btn btn-icon" routerLink="./" fragment="edit-servicio" rel="tooltip"
+                            style="float: right;" title="editar">
+                            <i class="fa fa-pencil" aria-hidden="true"></i></a>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10"
+                                data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0"
+                                aria-valuemax="100" [style.width]="skill.porcentaje"></div>
+                            <span class="progress-value"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section" id="edit-servicio">
+            <div class="container">
+                <div class="card" data-aos="fade-up" data-aos-offset="10">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-8">
+                            <div class="card-body">
+                                <div class="h4 mt-0 title">Ingresar Servicio y Porcentaje</div>
+                                <div class="form-group">
+                                    <input type="tex" [(ngModel)]="selecServicio.servicio"
+                                        placeholder="Insertar Nombre del Servicio" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <input type="tex" [(ngModel)]="selecServicio.porcentaje"
+                                        placeholder="Insertar Porcentaje (Ej. 50%)" class="form-control">
+                                </div>
+                                <button (click)="agregarOeditar()" class="btn btn-primary">Actualizar</button>
+                                <button *ngIf="selecServicio.id !== 0" class="btn btn-danger"
+                                    (click)="eliminar()">Eliminar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

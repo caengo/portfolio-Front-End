@@ -1,0 +1,60 @@
+<div class="section" id="experiencias">
+    <div class="container">
+        <div class="container">
+            <div class="row mt-3">
+                <div class="col-md-12 mx-auto">
+                    <div class="card">
+                        <div class="card-header">
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item">
+                                    <a class=""><b>Crear Experiencia</b></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-body">
+                            <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+                                <div class="form-group">
+                                    <label for="fechaInicio"><b>Fecha Inicio</b></label>
+                                    <input type="text" class="form-control" id="fechaInicio" name="fechaInicio"
+                                        [(ngModel)]="experiencia.fechaInicio">
+                                </div>
+                                <div class="form-group">
+                                    <label for="fechaFinal"><b>Fecha final</b></label>
+                                    <input type="text" class="form-control" id="fechaFinal" name="fechaFinal"
+                                        [(ngModel)]="experiencia.fechaFinal">
+                                </div>
+                                <div class="form-group">
+                                    <label for="nombre"><b>Nombre</b></label>
+                                    <input type="text" class="form-control" id="nombre" name="nombre"
+                                        [(ngModel)]="experiencia.nombre">
+                                </div>
+                                <div class="form-group">
+                                    <label for="resenia"><b>Resenia</b></label>
+                                    <input type="text" class="form-control" id="resenia" name="resenia"
+                                        [(ngModel)]="experiencia.resenia">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cargo"><b>Cargo</b></label>
+                                    <input type="text" class="form-control" id="cargo" name="cargo"
+                                        [(ngModel)]="experiencia.cargo">
+                                </div>
+                                <div class="form-group">
+                                    <label for="descripcion"><b>Descripcion</b></label>
+                                    <input type="text" class="form-control" id="descripcion" name="descripcion"
+                                        [(ngModel)]="experiencia.descripcion">
+                                </div>
+                                <div class="form-group">
+                                    <label for="referencia"><b>Referencia</b></label>
+                                    <input type="text" class="form-control" id="referencia" name="referencia"
+                                        [(ngModel)]="experiencia.referencia">
+                                </div>
+                                <button class="btn btn-block" [disabled]="!f.valid">Crear</button>
+                                <button class="btn btn-block" (click)="volver()"><i class=""></i> Volver</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

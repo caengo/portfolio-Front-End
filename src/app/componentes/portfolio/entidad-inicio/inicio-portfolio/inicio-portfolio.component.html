@@ -1,0 +1,25 @@
+<div class="profile-page">
+    <div class="wrapper">
+        <div class="page-header page-header-small" filter-color="green">
+            <div class="page-header-image" data-parallax="true"
+                style="background-image: url('assets/images/hero.jpg');">
+            </div>
+            <div class="container">
+                <div class="content-center">
+                    <div class="col-md-6">
+                        <div class="cc-profile-image">
+                            <img [src]="persona.imagen" alt="Image" />
+                        </div>
+                        <h1 class="h2 title">{{persona.nombre +" "+ persona.apellido}}</h1>
+                        <p class="category text-white">{{persona.profesion}}</p>
+                        <p class="category text-capitalize text-white">{{persona.resenia}}</p>
+                        <a class="btn btn-primary smooth-scroll mr-2" routerLink="./" fragment="contacto"
+                            data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Contratame</a>
+                        <a class="btn btn-primary" routerLink="./" fragment="acercade" data-aos="zoom-in"
+                            data-aos-anchor="data-aos-anchor">Mas de MI</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

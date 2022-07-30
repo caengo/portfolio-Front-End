@@ -1,0 +1,78 @@
+<div class="section" id="educacion-edit">
+    <div class="container cc-education">
+        <div class="h4 text-center mb-4 title">Educación</div>
+        <div class="card" *ngFor="let educacion of educacionArray" (click)="abrirParaEditar(educacion)"
+            [class.active]="educacion == selecEducacion">
+            <div class="row">
+                <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+                    <div class="card-body cc-education-header">
+                        <span>{{educacion.id}}</span>
+                        <p>{{educacion.fechaInicio}} - {{educacion.fechaFinal}}</p>
+                        <div class="h5">{{educacion.nombre}}</div>
+                    </div>
+                </div>
+                <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+                    <div class="card-body">
+                        <div class="h5">{{educacion.resenia}} <a class="btn btn-icon" routerLink="./"
+                                fragment="edit-educacion" rel="tooltip" style="float: right;" title="editar">
+                                <i class="fa fa-pencil" aria-hidden="true"></i></a></div>
+                        <h4 class="category">{{educacion.titulo}}</h4>
+                        <ul>
+                            <li *ngIf="educacion.descripcion"><b>Descripción: </b>{{educacion.descripcion}}</li>
+                            <li *ngIf="educacion.referencia"><b>Referencia: </b>{{educacion.referencia}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section" id="edit-educacion">
+            <div class="container">
+                <div class="card" data-aos="fade-up" data-aos-offset="10">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-12">
+                            <div class="card-body">
+                                <div class="h4 mt-0 title">Ingresar Fechas-Nombre-Título</div>
+                                <div class="form-group">
+                                    <input type="tex" [(ngModel)]="selecEducacion.fechaInicio"
+                                        placeholder="Insertar Fecha inicial" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <input type="tex" [(ngModel)]="selecEducacion.fechaFinal"
+                                        placeholder="Insertar Fecha final" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <input type="tex" [(ngModel)]="selecEducacion.nombre" placeholder="Insertar Nombre"
+                                        class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <input type="tex" [(ngModel)]="selecEducacion.titulo" placeholder="Insertar Título"
+                                        class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            <div class="card-body">
+                                <div class="h4 mt-0 title"> Más Datos</div>
+                                <div class="form-group">
+                                    <input type="tex" [(ngModel)]="selecEducacion.resenia" placeholder="Insertar Reseña"
+                                        class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <input type="tex" [(ngModel)]="selecEducacion.descripcion"
+                                        placeholder="Insertar Descripción" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <input type="tex" [(ngModel)]="selecEducacion.referencia"
+                                        placeholder="Insertar Referencia" class="form-control">
+                                </div>
+                                <button (click)="agregarOeditar()" class="btn btn-primary">Actualizar</button>
+                                <button *ngIf="selecEducacion.id !== 0" class="btn btn-danger"
+                                    (click)="eliminar()">Eliminar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

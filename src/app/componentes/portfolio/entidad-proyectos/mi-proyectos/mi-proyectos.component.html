@@ -1,0 +1,22 @@
+<div class="section" id="proyectos">
+    <div class="container cc-education">
+        <div class="h4 text-center mb-4 title">Proyectos</div>
+        <div class="row">
+            <ng-container *ngFor="let proyecto of proyectoArray">
+                <div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
+                    <div class="blog-entry">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title"> <span class="badge badge-primary">{{proyecto.id}}</span> -
+                                    {{proyecto.nombre}}</h4>
+                                <p>{{proyecto.resenia}}</p>
+                                <h5 class="card-text"><b>Tecnología :</b> "{{proyecto.tecnologia}}" </h5>
+                                <a href={{proyecto.referencia}} class="btn btn-primary stretched-link">LinkReferente</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>
